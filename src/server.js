@@ -10,7 +10,7 @@ const port = process.env.PORT;
 const whiteList = [
   process.env.FE_DEV_URL,
   process.env.FE_PROD_URL,
-  "http://localhost:3000/",
+  "http://localhost:3000",
   "https://strive-homework-m5-d10-frontend.vercel.app",
 ];
 const corsOptions = {
