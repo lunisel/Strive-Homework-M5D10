@@ -1,0 +1,26 @@
+{
+  "name": "Strive-Homework-M5D10",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config src/server.js",
+    "start": "node -r dotenv/config src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-list-endpoints": "^6.0.0",
+    "express-validator": "^6.12.1",
+    "fs-extra": "^10.0.0",
+    "http-errors": "^1.8.0",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.12",
+    "uniqid": "^5.4.0"
+  }
+}
