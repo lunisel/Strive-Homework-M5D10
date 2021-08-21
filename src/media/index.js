@@ -2,9 +2,6 @@ import express from "express";
 import uniqid from "uniqid";
 import createHttpError from "http-errors";
 import { getMedia, writeMedia } from "../../lib/fs-tools.js";
-/* import { CloudinaryStorage } from "multer-storage-cloudinary";
-import { v2 as cloudinary } from "cloudinary";
-import multer from "multer"; */
 
 const mediaRouter = express.Router();
 
@@ -74,28 +71,22 @@ mediaRouter.delete("/:imdbID", async (req, resp, next) => {
   }
 });
 
-/* const cloudStorage = new CloudinaryStorage({
+const cloudStorage = new CloudinaryStorage({
   cloudinary,
   params: {
     folder: "M5D10-NetflixAPI",
   },
+});
+
+/* mediaRouter.post("/:imdbID/poster", async (req, resp, next) => {
+  try {
+    const fileString = req.body.data;
+    const 
+  } catch (err) {
+    next(err);
+  }
 }); */
 
-/* const cloudMulter = multer({ storage: cloudStorage });
-
-mediaRouter.post(
-  "/:imdbID/poster",
-  cloudMulter.single("poster"),
-  async (req, resp, next) => {
-    try {
-      const newMedia = { Poster: req.file.path };
-      resp.send("Uploaded!");
-    } catch (err) {
-      next(err);
-    }
-  }
-);
- */
 mediaRouter.post("/:imdbID/reviews", async (req, resp, next) => {
   try {
     const media = await getMedia();
