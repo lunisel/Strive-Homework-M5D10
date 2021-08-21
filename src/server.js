@@ -27,6 +27,8 @@ const corsOptions = {
 };
 
 server.use(cors(corsOptions));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 server.use(express.json());
 
 server.use("/media", mediaRouter);
