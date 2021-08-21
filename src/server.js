@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { errorHandler } from "./errorHandlers.js";
 import mediaRouter from "./media/index.js";
+import bodyParser from "body-parser";
 
 const server = express();
 
