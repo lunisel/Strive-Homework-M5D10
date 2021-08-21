@@ -7,7 +7,7 @@ const server = express();
 
 console.log(server);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
 const whiteList = [
   process.env.FE_DEV_URL,
