@@ -5,13 +5,16 @@ import mediaRouter from "./media/index.js";
 
 const server = express();
 
+console.log(server);
+
 const port = process.env.PORT;
 
 const whiteList = [
   process.env.FE_DEV_URL,
   process.env.FE_PROD_URL,
-  "http://localhost:3000",
+  "http://localhost:" + port,
   "https://strive-homework-m5-d10-frontend.vercel.app",
+  "http://localhost:3000",
 ];
 const corsOptions = {
   origin: function (origin, next) {

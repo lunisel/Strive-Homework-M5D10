@@ -12,6 +12,7 @@ mediaRouter.get("/", async (req, resp, next) => {
       const filteredMedia = media.filter((m) => m.Title === req.query.Title);
       resp.send(filteredMedia);
     } else {
+      console.log(media);
       resp.send(media);
     }
   } catch (err) {
@@ -69,13 +70,6 @@ mediaRouter.delete("/:imdbID", async (req, resp, next) => {
   } catch (err) {
     next(err);
   }
-});
-
-const cloudStorage = new CloudinaryStorage({
-  cloudinary,
-  params: {
-    folder: "M5D10-NetflixAPI",
-  },
 });
 
 /* mediaRouter.post("/:imdbID/poster", async (req, resp, next) => {
